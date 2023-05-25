@@ -33,6 +33,6 @@ function [parsed_osm, osm_xml] = parse_openstreetmap(openstreetmap_filename)
 %
 % See also PLOT_WAY, EXTRACT_CONNECTIVITY.
 
-map_osm = load_osm_xml('map.osm');
+map_osm = load_osm_xml(openstreetmap_filename);
 osm_xml = map_osm.osm;
 parsed_osm = parse_osm(osm_xml);

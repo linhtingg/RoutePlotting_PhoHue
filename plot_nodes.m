@@ -20,7 +20,7 @@ function [] = plot_nodes(ax, parsed_osm, only_node_indices, show_id)
 
 % do not show node id (default)
 if nargin < 4
-    show_id = 1;
+    show_id = 0;
 end
 
 nodes = parsed_osm.node;
@@ -54,7 +54,7 @@ for i=only_node_indices
     else
         curtxt = ['index=', num2str(i) ];
     end
-    %textmd(node_xys(:, i), curtxt, 'Parent', ax)
+    textmd(node_xys(:, i), curtxt, 'Parent', ax)
 end
 
 restorehold(ax, held)

@@ -31,12 +31,13 @@ function [varargout] = plotmd(ax, x, varargin)
 
 ndim = size(x, 1);
 
+if ndim > 3
+    warning('plotmd:ndim', '#dimensions > 3, plotting only 3D component.')
+end
+
 if ndim == 2
     h = plot(ax, x(1, :), x(2, :), varargin{:} );
-elseif ndim == 3
-    h = plot3(ax, x(1, :), x(2, :), x(3, :), varargin{:} );
-else
-    warning('plotmd:ndim', '#dimensions > 3, plotting only 3D component.')
+elseif ndim >= 3
     h = plot3(ax, x(1, :), x(2, :), x(3, :), varargin{:} );
 end
 

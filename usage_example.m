@@ -18,8 +18,8 @@
 % 2010.11.25 (c) Ioannis Filippidis, jfilippidis@gmail.com
 
 %% name file
-openstreetmap_filename = 'map.osm';
-map_img_filename = 'map.png'; % image file saved from online, if available
+openstreetmap_filename = 'map_phohue.osm';
+map_img_filename = 'map_phohue.png'; % image file saved from online, if available
 
 %% convert XML -> MATLAB struct
 % convert the OpenStreetMap XML Data file donwloaded as map.osm
@@ -32,9 +32,8 @@ map_img_filename = 'map.png'; % image file saved from online, if available
 intersection_nodes = get_unique_node_xy(parsed_osm, intersection_node_indices);
 
 %% plan a route
-
-% try with the assumption of one-way roads (ways in OSM)
 %{
+% try with the assumption of one-way roads (ways in OSM)
 start = 1105; % node id
 target = 889;
 dg = connectivity_matrix; % directed graph
@@ -42,8 +41,8 @@ dg = connectivity_matrix; % directed graph
 %}
 
 % try without the assumption of one-way roads
-start = 1; % node global index
-target = 9;
+start = 66; % node global index
+target = 36;
 dg = or(connectivity_matrix, connectivity_matrix.'); % make symmetric
 [route, dist] = route_planner(dg, start, target);
 
@@ -58,7 +57,7 @@ plot_way(ax, parsed_osm)
 plot_way(ax, parsed_osm, map_img_filename) % if you also have a raster image
 
 plot_route(ax, route, parsed_osm)
-only_nodes = 1:10:1000; % not all nodes, to reduce graphics memory & clutter
+only_nodes = 1:5:1000; % not all nodes, to reduce graphics memory & clutter
 plot_nodes(ax, parsed_osm, only_nodes)
 
 % show intersection nodes (unseful, but may result into a cluttered plot)
