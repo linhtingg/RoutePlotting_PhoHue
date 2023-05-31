@@ -27,11 +27,12 @@ nodes = parsed_osm.node;
 node_ids = nodes.id;
 node_xys = nodes.xy;
 
-% which nodes to plot ?
+%which nodes to plot ?
 n = size(node_xys, 2);
 if nargin < 3
     only_node_indices = 1:n;
 end
+
 
 %% plot
 held = takehold(ax);
