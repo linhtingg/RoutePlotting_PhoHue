@@ -1,7 +1,3 @@
-Bản 25/5:
--------
-Lưu ý khi chạy `usage_example.m` chỉ cọn các node nằm đúng trên đường đi thì mới tìm được đường.
-
 Summary
 -------
 Load map, extract connectivity, plot road network & find shortest paths from OpenStreetMap `XML` file.

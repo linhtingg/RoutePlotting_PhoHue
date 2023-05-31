@@ -77,7 +77,7 @@ for i=1:size(way.id, 2)
     if flag == 1
         plot(hax, nd_coor(1,:), nd_coor(2,:), 'b-')
         plot(nd_coor(1,:), nd_coor(2,:), '.')
-        textmd(node_xys(:, i), curtxt, 'Parent', ax)
+        %textmd(node_xys(:, i), curtxt, 'Parent', ax)
     else
         plot(hax, nd_coor(1,:), nd_coor(2,:), 'g--')
     end
